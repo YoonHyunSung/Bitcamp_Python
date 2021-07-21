@@ -14,16 +14,17 @@ class Bugmusic(object):
         self.url = url
 
     def scrap(self):
-
         soup = BeautifulSoup(urlopen(self.url),'lxml')
-        ls=[]
-        n_artists =0
-        n_title = 0
+
+        b=[]
         a=soup.find_all(name='p', attrs={'class': 'title'})
+        print(a)
         for i,j in enumerate(soup.find_all(name='p',attrs={'class':'artist'})):
-            n_artists +=1
-            print("title :" + a[i].find('a').text+"Artist :"+j.find('a').text)
-        # print('*' * 100)
+            b.append(a[i].find('a').text+"*"+"Artist :"+j.find('a').text)
+        print(b)
+
+            #b.append("title :" + a[i].find('a').text+"*"+"Artist :"+j.find('a').text)
+            # print('*' * 100)
         # for i in soup.find_all(name='p', attrs={'class': 'title'}):
             #n_title += 1
             #print(str(n_title)+"Rank")
