@@ -12,7 +12,7 @@ def to_string(self):
     print(f'{self.name},{self.phone},{self.email}.{ self.address}')
 
 
-def set_contacts():
+def set_contacts() -> object:
     return Contacts(input('name'), input('phone'), input('email'), input('address'))
 
 
@@ -29,7 +29,7 @@ def del_contact(ls,name):
         else :
             break
 
-def menu(ls):
+def menu(ls) -> int:
     t=''
     for i,j in enumerate(ls):
         t +=str(i)+'-'+j+'\t'

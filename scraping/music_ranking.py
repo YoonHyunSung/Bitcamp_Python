@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import requests
 import datetime
 from pandas import DataFrame
+
+from common.menu import print_menu
+
+
 class MusicRanking(object):
     #java 에서는 파라미터가 없으면 defalut constructor python에서는 init이없으면
     findall = []
@@ -64,12 +68,7 @@ class MusicRanking(object):
         path = f'./data/{self.fname}.csv'
         self.df.to_csv(path,sep=',', na_rep='NaN')
 
-def print_menu(ls):
-    # return '\t'.join(ls)
-    t = ''
-    for i, j in enumerate(ls):
-        t += str(i) + '-' + j + '\t'
-    return int(input(t))
+
 def main():
     now = datetime.datetime.now()
     mr = MusicRanking()
