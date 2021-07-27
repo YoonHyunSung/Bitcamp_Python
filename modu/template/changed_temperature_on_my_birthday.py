@@ -27,7 +27,7 @@ class ChangedTemperaturesOnMyBirthday():
         self.save_data_to_temperature1()
 
     def read_data(self):
-        data = csv.reader(open('./data/unit5_seoul.csv','rt',encoding='UTF-8'))
+        data = csv.reader(open('data/seoul.csv', 'rt', encoding='UTF-8'))
         next(data)
         self.data = data
         # self.data = []

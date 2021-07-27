@@ -22,9 +22,9 @@ class Dataset(object):
     def fname(self,fname): self._fname = fname
 
     @property
-    def test(self)-> object:return self.test
-    @train.setter
-    def test(self,test): self.test = test
+    def test(self)-> object:return self._test
+    @test.setter
+    def test(self,test): self._test = test
 
     @property
     def train(self) -> object: return self._train
